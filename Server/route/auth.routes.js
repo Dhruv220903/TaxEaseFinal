@@ -1,22 +1,19 @@
-const { checkDuplicateUsernameOrEmail } = require("../middleware/verifySignUp");
-const express = require("express")
-const  {
-  signup,
-  signin,
-  signout
-} = require('../controller/auth.controller');
+import { checkDuplicateUsernameOrEmail } from "../middleware/verifySignUp.js";
+import express from "express";
+import { signup, signin, signout } from "../controller/auth.controller.js";
 
 const authRoutes = express.Router();
 
-  authRoutes.post(
-    "/signup",
-    [
-      checkDuplicateUsernameOrEmail
-    ],
-    signup
-  );
+authRoutes.post(
+  "/signup",
+  [
+    checkDuplicateUsernameOrEmail
+  ],
+  signup
+);
 
-  authRoutes.post("/signin", signin);
+authRoutes.post("/signin", signin);
 
-  authRoutes.post("/signout", signout);
-  module.exports= authRoutes
+authRoutes.post("/signout", signout);
+
+export default authRoutes;

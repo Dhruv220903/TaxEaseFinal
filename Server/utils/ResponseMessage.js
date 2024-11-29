@@ -1,4 +1,4 @@
-export const ResponseMessage = {
+const ResponseMessage = {
   INTERNAL_SERVER_ERROR: "Internal Server Error",
   BAD_REQUEST: "Bad request",
   USER_CREATED: "User sign up successfully",
@@ -26,3 +26,5 @@ export const ResponseMessage = {
   CAPUSLE_DELETED: "Capsule deleted successfully",
   DATA_NOT_FOUND: "Data not found",
 };
+
+export default ResponseMessage;

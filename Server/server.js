@@ -1,23 +1,28 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const app = express();
-const cors = require('cors');
-const cookieSession = require("cookie-session");
-const dotenv = require("dotenv");
-const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
-const apiRoutes = require('./route/routes');
+import express from 'express';
+import mongoose from 'mongoose';
+import cors from 'cors';
+import cookieSession from 'cookie-session';
+import dotenv from 'dotenv';
+import bodyParser from 'body-parser';
+import cookieParser from 'cookie-parser';
+import apiRoutes from './route/routes.js';
 
+const app=express();
 dotenv.config();
 
 // Database Connection
-mongoose
-  .connect(`mongodb+srv://sourabhpatil3617:WQ2HeTEmactCMdWG@cluster0.ibo6e.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0`, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
+
+
+const mongoURI = "mongodb+srv://sourabhpatil3617:WQ2HeTEmactCMdWG@cluster0.ibo6e.mongodb.net/test?retryWrites=true&w=majority";
+
+mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log("Connected to MongoDB successfully.");
   })
-  .then(() => console.log("Connected to Database"))
-  .catch((err) => { })
+  .catch((error) => {
+    console.log("Error connecting to MongoDB:", error);
+  });
+
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));

@@ -1,5 +1,5 @@
 import { StatusCodes } from "http-status-codes";
-import { ResponseMessage } from "../utils/ResponseMessage.js";
+import  ResponseMessage  from "../utils/ResponseMessage.js";
 import Tax from "../models/taxSchema.js";
 
 const addEditTax = async (req, res) => {

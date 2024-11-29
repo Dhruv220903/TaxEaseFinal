@@ -1,19 +1,18 @@
-const express = require("express")
-const {
+import express from 'express';
+import {
   addEditUser,
   deleteAccount,
   getAllUsers,
   getSingleUserById,
-} =  require("../controller/userController.js");
-const { verifyToken } = require("../middleware/authJwt.js");
-
+} from '../controller/userController.js';
+import { verifyToken } from '../middleware/authJwt.js';
 
 const userRoutes = express.Router();
 
-userRoutes.get("/detail",verifyToken,getSingleUserById)
-userRoutes.get("/get-all-users", getAllUsers);
-userRoutes.post("/get-single-user", getSingleUserById);
-userRoutes.post("/add-edit-profile",verifyToken, addEditUser);
-userRoutes.get("/delete-user", deleteAccount);
+userRoutes.get('/detail', verifyToken, getSingleUserById);
+userRoutes.get('/get-all-users', getAllUsers);
+userRoutes.post('/get-single-user', getSingleUserById);
+userRoutes.post('/add-edit-profile', verifyToken, addEditUser);
+userRoutes.get('/delete-user', deleteAccount);
 
-module.exports =userRoutes;
+export default userRoutes;

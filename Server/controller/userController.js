@@ -1,6 +1,6 @@
 // const express = require("express");
 import { StatusCodes } from "http-status-codes";
-import { ResponseMessage } from "../utils/ResponseMessage.js";
+import  ResponseMessage  from "../utils/ResponseMessage.js";
 
 import User from "../models/userSchema.js";
 const addEditUser = async (req, res) => {

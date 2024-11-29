@@ -1,5 +1,6 @@
 import { StatusCodes } from "http-status-codes";
-import { ResponseMessage } from "../utils/ResponseMessage.js";
+import ResponseMessage from "../utils/ResponseMessage.js";
+
 import Income from "../models/IncomeSchema.js";
 
 const addEditIncome = async (req, res) => {
