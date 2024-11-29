@@ -28,10 +28,7 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(cors({
-  origin: 'http://localhost:5173', // React app's URL
-  credentials: true
-}));
+app.use(cors());
 // Enable CORS for all origins
 app.use(express.urlencoded({ extended: true }));
 
